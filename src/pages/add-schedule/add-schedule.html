@@ -1,0 +1,48 @@
+<!--
+  Generated template for the AddSchedulePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Schedule</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <h2>Add Data</h2>
+    <form (ngSubmit)="addSchedule()">
+      <ion-item>
+        <ion-label>제목</ion-label>
+        <ion-input type="text" aria-placeholder="제목을 입력해 주세요" [ngModel] = "schedule?.title" name="title" aria-required="" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>기준일</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [ngModel]="schedule?.standardDate" name="standardDate" required=""></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>음력여부</ion-label>
+        <ion-checkbox [ngModel]="schedule?.isLunar" name="isLunar"></ion-checkbox>        
+      </ion-item>
+      <ion-item>
+        <ion-label>반복여부</ion-label>
+        <ion-checkbox [ngModel]="schedule?.isRepeat" name="isRepeat"></ion-checkbox>        
+      </ion-item>
+      <ion-item>
+        <ion-label>반복방법</ion-label>
+        <ion-input type="text" [ngModel] = "schedule?.repeatMethod" name="title" aria-required="" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>요일제외</ion-label>
+        <ion-input type="text" [ngModel]="schedule?.exceptDayOfWeek" name="exceptDayOfWeek" required="" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>제외시처리</ion-label>
+        <ion-input type="text" [ngModel]="schedule?.supplantExceptDayOfWeek" name="supplantExceptDayOfWeek" required="" ></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Save Data</button>
+    </form>
+  </ion-content>
